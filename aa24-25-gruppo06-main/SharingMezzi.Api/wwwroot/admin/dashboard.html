@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SharingMezzi - Dashboard Admin</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/7.0.0/signalr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/admin-dashboard.css">
+</head>
+<body>
+    <!-- Login Form -->
+    <div id="loginForm" class="login-container">
+        <div class="login-card">
+            <div class="login-header">
+                <h2><i class="fas fa-bicycle"></i> SharingMezzi Admin</h2>
+                <p>Accedi alla dashboard di amministrazione</p>
+            </div>
+            <form id="login">
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" value="admin@test.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" value="admin123" required>
+                </div>
+                <button type="submit" class="login-btn">
+                    <i class="fas fa-sign-in-alt"></i> Accedi
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Dashboard -->
+    <div id="dashboard" class="container hide">
+        <!-- Header -->
+        <div class="header">
+            <h1>
+                <i class="fas fa-tachometer-alt"></i>
+                Dashboard Admin - SharingMezzi
+            </h1>
+            <div class="subtitle">
+                <span>Gestione completa del sistema di sharing mobility</span>
+                <div class="status-indicator active" id="mqttStatus">
+                    <span class="pulse"></span>
+                    MQTT Attivo
+                </div>
+                <div class="status-indicator active" id="iotStatus">
+                    <span class="pulse"></span>
+                    IoT Connesso
+                </div>
+                <div class="status-indicator active" id="signalrStatus">
+                    <span class="pulse"></span>
+                    SignalR Attivo
+                </div>
+                <button class="btn btn-primary refresh-all-btn" onclick="refreshAllParkings()">
+                    <i class="fas fa-sync"></i> Aggiorna Tutto
+                </button>
+            </div>
+        </div>
+
+        <!-- Statistics -->
+        <div class="dashboard-grid">
+            <div class="card stat-card">
+                <div class="stat-icon">
+                    <i class="fas fa-bicycle"></i>
+                </div>
+                <div class="stat-value" id="totalMezzi">0</div>
+                <div class="stat-label">Mezzi Totali</div>
+            </div>
+            
+            <div class="card stat-card">
+                <div class="stat-icon">
+                    <i class="fas fa-parking"></i>
+                </div>
+                <div class="stat-value" id="totalParcheggi">0</div>
+                <div class="stat-label">Parcheggi Attivi</div>
+            </div>
+            
+            <div class="card stat-card">
+                <div class="stat-icon">
+                    <i class="fas fa-battery-quarter"></i>
+                </div>
+                <div class="stat-value" id="batteriaBassa">0</div>
+                <div class="stat-label">Batterie Basse</div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Parcheggi Panel -->
+            <div class="card">
+                <h3 class="card-title">
+                    <i class="fas fa-map-marker-alt"></i> Stato Parcheggi e Mezzi
+                </h3>
+                <div id="parcheggiContainer" class="parcheggi-grid">
+                    <div class="loading">
+                        <div class="spinner"></div>
+                        <p>Caricamento dati parcheggi...</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Manutenzione Panel -->
+            <div class="card">
+                <h3 class="card-title">
+                    <i class="fas fa-tools"></i> Mezzi in Manutenzione
+                </h3>
+                <div id="manutenzioneContainer" class="manutenzione-panel">
+                    <div class="loading">
+                        <div class="spinner"></div>
+                        <p>Caricamento mezzi in manutenzione...</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Alerts Panel -->
+            <div class="card">
+                <h3 class="card-title">
+                    <i class="fas fa-exclamation-triangle"></i> Avvisi e Notifiche
+                </h3>
+                <div id="alertsContainer" class="alerts-panel">
+                    <div class="loading">
+                        <div class="spinner"></div>
+                        <p>Caricamento avvisi...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Chart -->
+        <div class="card chart-card">
+            <h3 class="card-title">
+                <i class="fas fa-chart-line"></i> Statistiche Sistema
+            </h3>
+            <div class="chart-container">
+                <canvas id="systemChart"></canvas>
+            </div>
+        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Mezzo Details -->
+    <div id="mezzoModal" class="modal hide">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle" class="modal-title">Dettagli Mezzo</h3>
+                <button class="close-btn" onclick="closeModal()">×</button>
+            </div>
+            <div id="modalContent"></div>
+            <div class="modal-actions">
+                <button class="btn btn-primary" onclick="closeModal()">Chiudi</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div id="loadingOverlay" class="loading-overlay hide">
+        <div class="loading-content">
+            <div class="spinner"></div>
+            <p id="loadingMessage">Caricamento...</p>
+        </div>
+    </div>
+
+    <script src="js/admin-dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharingMezzi.Core", "SharingMezzi.Core\SharingMezzi.Core.csproj", "{A1B2C3D4-E5F6-4738-9ABC-DEF123456789}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharingMezzi.Infrastructure", "SharingMezzi.Infrastructure\SharingMezzi.Infrastructure.csproj", "{B2C3D4E5-F6A7-4829-ABCD-EF0123456789}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharingMezzi.Api", "SharingMezzi.Api\SharingMezzi.Api.csproj", "{C3D4E5F6-A7B8-4930-BCDE-F01234567890}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharingMezzi.IoT", "SharingMezzi.IoT\SharingMezzi.IoT.csproj", "{D4E5F6A7-B8C9-4A41-CDEF-012345678901}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharingMezzi.Client.Console", "SharingMezzi.Client.Console\SharingMezzi.Client.Console.csproj", "{E5F6A7B8-C9DA-4B52-DEF0-123456789012}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharingMezzi.Monitor", "SharingMezzi.Monitor\SharingMezzi.Monitor.csproj", "{F6A7B8C9-DAE5-4C63-EF01-234567890123}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A1B2C3D4-E5F6-4738-9ABC-DEF123456789}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1B2C3D4-E5F6-4738-9ABC-DEF123456789}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1B2C3D4-E5F6-4738-9ABC-DEF123456789}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1B2C3D4-E5F6-4738-9ABC-DEF123456789}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2C3D4E5-F6A7-4829-ABCD-EF0123456789}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2C3D4E5-F6A7-4829-ABCD-EF0123456789}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2C3D4E5-F6A7-4829-ABCD-EF0123456789}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2C3D4E5-F6A7-4829-ABCD-EF0123456789}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3D4E5F6-A7B8-4930-BCDE-F01234567890}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3D4E5F6-A7B8-4930-BCDE-F01234567890}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3D4E5F6-A7B8-4930-BCDE-F01234567890}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3D4E5F6-A7B8-4930-BCDE-F01234567890}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4E5F6A7-B8C9-4A41-CDEF-012345678901}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4E5F6A7-B8C9-4A41-CDEF-012345678901}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4E5F6A7-B8C9-4A41-CDEF-012345678901}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4E5F6A7-B8C9-4A41-CDEF-012345678901}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5F6A7B8-C9DA-4B52-DEF0-123456789012}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5F6A7B8-C9DA-4B52-DEF0-123456789012}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5F6A7B8-C9DA-4B52-DEF0-123456789012}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5F6A7B8-C9DA-4B52-DEF0-123456789012}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6A7B8C9-DAE5-4C63-EF01-234567890123}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6A7B8C9-DAE5-4C63-EF01-234567890123}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6A7B8C9-DAE5-4C63-EF01-234567890123}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6A7B8C9-DAE5-4C63-EF01-234567890123}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
